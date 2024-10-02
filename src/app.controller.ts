@@ -2,7 +2,7 @@ import { Body, Controller, Get, Post, Req, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 
 export interface BodyInterface {
-  phoneNumber: string;
+  senderId: string;
   message: string;
 }
 @Controller()

@@ -37,14 +37,14 @@ export class AppService {
   }
 
   async sendMessage(body: BodyInterface): Promise<any> {
-    const { phoneNumber, message } = body;
+    const { senderId, message } = body;
     const headers = {
       'Content-Type': 'application/json',
       'X-Viber-Auth-Token': this.configService.get('botToken'),
     };
 
     const data = {
-      receiver: phoneNumber, // The Viber user ID to whom the message will be sent
+      receiver: senderId, // The Viber user ID to whom the message will be sent
       min_api_version: 7,
       sender: {
         name: 'Test Bot', // Name of your bot
